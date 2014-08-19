@@ -1,0 +1,17 @@
+extends: [base_package]
+
+dependencies:
+  build: [bzip2, mpich, zlib]
+
+sources:
+- key: tar.gz:nsmgboinhesamzyqvy2jx4ydashswo6m
+  url: http://downloads.sourceforge.net/openss/openspeedshop-release-2.1.tar.gz
+
+build_stages:
+- name: build
+  after: prologue
+  handler: bash
+  bash: |
+    ./install-tool --build-offline \
+        --openss-prefix $ARTIFACT \
+        --with-mpich $MPICH_DIR
