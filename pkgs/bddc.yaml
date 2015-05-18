@@ -40,7 +40,7 @@ build_stages:
         BDDCML_MPFFLAGS="$FFLAGS" \
         BDDCML_MPCFLAGS="$CFLAGS" \
         BDDCML_INCPARMETIS=-I$PARMETIS_DIR/include \
-        BDDCML_LIBPARMETIS="-L$PARMETIS_DIR/lib -Wl,-rpath=${PARMETIS_DIR}/lib -lparmetis" \
+        BDDCML_LIBPARMETIS="-L$PARMETIS_DIR/lib -Wl,-rpath,${PARMETIS_DIR}/lib -lparmetis" \
         BDDCML_INCMETIS= \
         BDDCML_LIBMETIS="-lmetis" \
         BDDCML_INCMUMPS=-I$MUMPS_DIR/include \
@@ -48,8 +48,8 @@ build_stages:
         BDDCML_INCBLOPEX=-I$BLOPEX_DIR/include \
         BDDCML_LIBBLOPEX="-L$BLOPEX_DIR/lib -lBLOPEX -lblopex_serial_double" \
         BDDCML_OBJBLOPEX= \
-        BDDCML_LIBSCALAPACK="-L$SCALAPACK_DIR/lib -Wl,-rpath=${SCALAPACK_DIR}/lib -lscalapack" \
-        BDDCML_LIBLAPACK="-L$LAPACK_DIR/lib -Wl,-rpath=${LAPACK_DIR}/lib -llapack" \
+        BDDCML_LIBSCALAPACK="-L$SCALAPACK_DIR/lib -Wl,-rpath,${SCALAPACK_DIR}/lib -lscalapack" \
+        BDDCML_LIBLAPACK="-L$LAPACK_DIR/lib -Wl,-rpath,${LAPACK_DIR}/lib -llapack" \
         BDDCML_LIBBLAS="-lblas" \
         BDDCML_LIBBLACS= \
         -j 1 # The BDDC's makefile system doesn't work in parallel
