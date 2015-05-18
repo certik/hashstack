@@ -23,8 +23,8 @@ build_stages:
   when compiler != 'gcc':
       extra: ['-D BUILD_TESTING:BOOL=OFF',
               '-D BUILD_SHARED_LIBS:BOOL=ON',
-              '-D LAPACK_LIBRARIES:STRING="${LAPACK_DIR}/lib/liblapack.so"',
-              '-D BLAS_LIBRARIES:STRING="${LAPACK_DIR}/lib/libblas.so"',
+              '-D LAPACK_LIBRARIES:STRING="${LAPACK_DIR}/lib/liblapack.dylib"',
+              '-D BLAS_LIBRARIES:STRING="${LAPACK_DIR}/lib/libblas.dylib"',
               ]
   build_in_source: true
 
